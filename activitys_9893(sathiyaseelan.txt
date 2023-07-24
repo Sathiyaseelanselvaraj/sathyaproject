@@ -1,0 +1,31 @@
+15/07/2023
+
+create table employee(emp_id int,emp_name char(10),
+job_name char(20),manager_id int,
+hire_date int,salary float,
+commission int,dep_id int);
+
+ insert into employee(`emp_id`,`emp_name`,`job_name`,`hire_date`,`salary`,`dep_id`) 
+ values(68319,'KAYLING','PRESIDENT',1991-11-18,6000.00,1001);
+ 
+insert into employee(`emp_id`,`emp_name`,`job_name`,`manager_id`,`hire_date`,`salary`,`dep_id`) 
+  values(66928,'BLAZE','MANAGER',68319,1991-05-01,2750.00,3001);
+
+insert into employee(`emp_id`,`emp_name`,`job_name`,`manager_id`,`hire_date`,`salary`,`dep_id`)
+ values(67832,'CLAZE','MANAGER',68319,1991-06-09,2550.00,1001);
+
+insert into employee(`emp_id`,`emp_name`,`job_name`,`manager_id`,`hire_date`,`salary`,`dep_id`) 
+values(65646,'JONAS','MANAGER',68319,1991-04-02,2957.00,2001),(67858,'SCARLET','ANALYST',65646,1997-04-19,3100.00,2001),(69062,'FRANK','ANALYST',65646,1991-12-03,3100.00,2001); 
+
+SELECT * FROM EMPLOYEE;
+
+alter table employee drop commission; 
+alter table employee add comission int;
+update employee set comission=300 where dep_id=2001;
+update employee set comission=260 where dep_id=1001;
+delete from employee where job_name='ANALYST'; 
+delete from employee where job_name='MANAGER' and emp_name='CLAZE'; 
+update employee set manager_id=68310 where job_name='PRESIDENT';
+truncate employee;
+SELECT * FROM EMPLOYEE;
+drop table employee;
